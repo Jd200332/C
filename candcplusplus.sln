@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37216.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "candcplusplus", "candcplusplus\candcplusplus.vcxproj", "{CF125E0A-008E-447A-8B1B-707609A73EF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF125E0A-008E-447A-8B1B-707609A73EF5}.Debug|x64.ActiveCfg = Debug|x64
+		{CF125E0A-008E-447A-8B1B-707609A73EF5}.Debug|x64.Build.0 = Debug|x64
+		{CF125E0A-008E-447A-8B1B-707609A73EF5}.Debug|x86.ActiveCfg = Debug|Win32
+		{CF125E0A-008E-447A-8B1B-707609A73EF5}.Debug|x86.Build.0 = Debug|Win32
+		{CF125E0A-008E-447A-8B1B-707609A73EF5}.Release|x64.ActiveCfg = Release|x64
+		{CF125E0A-008E-447A-8B1B-707609A73EF5}.Release|x64.Build.0 = Release|x64
+		{CF125E0A-008E-447A-8B1B-707609A73EF5}.Release|x86.ActiveCfg = Release|Win32
+		{CF125E0A-008E-447A-8B1B-707609A73EF5}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF125E0A-008E-447A-8B1B-707609A73EF5} = {8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AE67A4B-7D05-42EB-A8A6-8DCE4C164CDC}
+	EndGlobalSection
+EndGlobal
