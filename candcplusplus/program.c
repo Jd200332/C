@@ -199,23 +199,41 @@
 // ****
 //****
 
+//int main()
+//{
+//	for (int row = 0; row < 4; row++)
+//	{
+//
+//		for (int spaces = 4; spaces > row ; spaces--)
+//		{
+//			printf(" ");
+//		}
+//
+//		for (int columns = 0; columns < 4; columns++)
+//		{
+//			printf("*");
+//		}
+//
+//		printf("\n");
+//	}
+//}
+
+//*
+//**
+//***
+//****
+
 int main()
 {
-	for (int row = 0; row < 4; row++)
+	int num = 5;
+	for (int row = 0; row < num; row++)
 	{
-
-		for (int spaces = 4; spaces > row ; spaces--)
-		{
-
-			printf(" ");
-		}
-
-		for (int columns = 0; columns < 4; columns++)
+		for (int column = 0; column < row + 1; column++)
 		{
 			printf("*");
 		}
 
-		printf("\n");
+		printf("\n");	
 	}
 }
 
