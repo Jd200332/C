@@ -194,5 +194,30 @@
 //}
 
 
+//   ****
+//  ****
+// ****
+//****
+
+int main()
+{
+	for (int row = 0; row < 4; row++)
+	{
+
+		for (int spaces = 4; spaces > row ; spaces--)
+		{
+
+			printf(" ");
+		}
+
+		for (int columns = 0; columns < 4; columns++)
+		{
+			printf("*");
+		}
+
+		printf("\n");
+	}
+}
+
 
 
