@@ -118,3 +118,175 @@
 /// along with the total , number of even and off number
 /// </summary>
 /// <returns></returns>
+
+
+#include<stdio.h>
+#include<stdlib.h>	
+#include <iostream>
+
+//int main()
+//{
+//	for (int i = 0; i < 5; i++)
+//	{
+//		for (int space = 5; space > i; space--)
+//		{
+//			std::cout << " ";
+//		}
+//
+//		for (int j = 0; j < 5; j++)
+//		{
+//			std::cout << "*";
+//		}
+//
+//		std::cout << "\n";
+//	}
+// }
+
+
+//*
+//**
+//***
+//****
+//int main()
+//{
+//	for (int r = 0; r < 5; r++)
+//	{
+//		for (int c = 0; c < r; c++)
+//		{
+//			std::cout << "*";
+//		}
+//
+//		std::cout << "\n";
+//	}
+//}
+
+
+//   *
+//  ***
+// *****
+//*******
+
+//*
+//***
+//***
+//*
+
+
+
+//int main()
+//{
+//	int r ;
+//	for (int i = 0; i < r; i++)    //outer loop for number of rows
+//	{
+//		for (int k = r; k > i + 1; k--)     //nested loop for number of spaces
+//		{
+//			std::cout << " ";     //printing spaces
+//		}
+//		for (int j = 0; j <= i * 2; j++)     //nested loop for printing stars
+//		{
+//			std::cout << "*";     //printing stars
+//		}
+//		std::cout << "\n"; //printing newline
+//	}
+//}
+
+
+#include <stdio.h>
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+
+//int main() {
+//	char arr[10] = { 'A', 'B', 'C', 'D', 'E' };
+//	int size = 5; 
+//	int p = 3;
+//	int value = 'F';
+//
+//	for (int i = p; i < size - 1; i++)
+//	{
+//		arr[i] = arr[i + 1];
+//	}
+//
+//	arr[p] = value;
+//	size++;
+//
+//	for (int i = 0; i < size; i++)
+//	{
+//		std::cout << arr[i] << " ";
+//	}
+//
+//	return 0;
+//}
+
+
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+void printList(struct Node* head) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        std::cout << temp->data << " ";
+        temp = temp->next;
+    }
+    std::cout << "\n";
+}
+
+
+//linkedlist
+int main() {
+    struct Node* head = NULL;
+
+    struct Node* first = (struct Node*)malloc(sizeof(struct Node));
+    first->data = 10;
+    first->next = NULL;
+
+    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+    second->data = 20;
+    second->next = NULL;
+
+    struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+    third->data = 30;
+    third->next = NULL;
+
+    head = first;
+    first->next = second;
+    second->next = third;
+
+    printList(head);  // Output: 10 20 30
+
+    return 0;
+}
+
+
+//queue
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+
+int main()
+{
+    struct Node* top = NULL;
+
+    struct Node* first = (struct Node*)malloc(sizeof(struct Node));
+    first->data = 10;
+    first->next = NULL;
+    top = first;
+
+    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+    first->data = 20;
+    first->next = NULL;
+    top = second;
+
+    return 0;
+}
+
+
+

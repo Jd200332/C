@@ -223,19 +223,23 @@
 //***
 //****
 
-int main()
-{
-	int num = 5;
-	for (int row = 0; row < num; row++)
-	{
-		for (int column = 0; column < row + 1; column++)
-		{
-			printf("*");
-		}
+//int main()
+//{
+//	int num = 5;
+//	for (int row = 0; row < num; row++)
+//	{
+//		for (int column = 0; column < row + 1; column++)
+//		{
+//			printf("*");
+//		}
+//
+//		printf("\n");	
+//	}
+//}
 
-		printf("\n");	
-	}
-}
+
+
+
 
 
 
