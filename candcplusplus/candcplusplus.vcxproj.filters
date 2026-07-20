@@ -21,8 +21,5 @@
     <ClCompile Include="program.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="program1.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

@@ -191,10 +191,7 @@
 //}
 
 
-#include <stdio.h>
-#include<iostream>
-#include<cstdio>
-#include<cstdlib>
+
 
 //int main() {
 //	char arr[10] = { 'A', 'B', 'C', 'D', 'E' };
@@ -219,74 +216,103 @@
 //}
 
 
-#include <cstdio>
-#include <cstdlib>
-#include <iostream>
+//#include <cstdio>
+//#include <cstdlib>
+//#include <iostream>
+//
+//struct Node {
+//    int data;
+//    struct Node* next;
+//};
+//
+//void printList(struct Node* head) {
+//    struct Node* temp = head;
+//    while (temp != NULL) {
+//        std::cout << temp->data << " ";
+//        temp = temp->next;
+//    }
+//    std::cout << "\n";
+//}
+//
+//
+////linkedlist
+//int main() {
+//    struct Node* head = NULL;
+//
+//    struct Node* first = (struct Node*)malloc(sizeof(struct Node));
+//    first->data = 10;
+//    first->next = NULL;
+//
+//    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+//    second->data = 20;
+//    second->next = NULL;
+//
+//    struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+//    third->data = 30;
+//    third->next = NULL;
+//
+//    head = first;
+//    first->next = second;
+//    second->next = third;
+//
+//    printList(head);  // Output: 10 20 30
+//
+//    return 0;
+//}
+//
+//
+////queue
+//struct Node
+//{
+//    int data;
+//    struct Node* next;
+//};
+//
+//int main()
+//{
+//    struct Node* top = NULL;
+//
+//    struct Node* first = (struct Node*)malloc(sizeof(struct Node));
+//    first->data = 10;
+//    first->next = NULL;
+//    top = first;
+//
+//    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+//    first->data = 20;
+//    first->next = NULL;
+//    top = second;
+//
+//    return 0;
+//}
 
-struct Node {
-    int data;
-    struct Node* next;
-};
 
-void printList(struct Node* head) {
-    struct Node* temp = head;
-    while (temp != NULL) {
-        std::cout << temp->data << " ";
-        temp = temp->next;
-    }
-    std::cout << "\n";
-}
+#include <stdio.h>
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
 
-
-//linkedlist
-int main() {
-    struct Node* head = NULL;
-
-    struct Node* first = (struct Node*)malloc(sizeof(struct Node));
-    first->data = 10;
-    first->next = NULL;
-
-    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
-    second->data = 20;
-    second->next = NULL;
-
-    struct Node* third = (struct Node*)malloc(sizeof(struct Node));
-    third->data = 30;
-    third->next = NULL;
-
-    head = first;
-    first->next = second;
-    second->next = third;
-
-    printList(head);  // Output: 10 20 30
-
-    return 0;
-}
-
-
-//queue
-struct Node
-{
-    int data;
-    struct Node* next;
-};
 
 int main()
 {
-    struct Node* top = NULL;
+	int arr[10] = { 1,2,3,4,5 };
+	int size = 5; 
+	int value = 45554;
 
-    struct Node* first = (struct Node*)malloc(sizeof(struct Node));
-    first->data = 10;
-    first->next = NULL;
-    top = first;
+	for (int i = size; i > 3; i--)
+	{
+		arr[i] = (arr[i - 1]);
 
-    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
-    first->data = 20;
-    first->next = NULL;
-    top = second;
 
-    return 0;
+	}
+
+	arr[2] = value;
+	size++;
+
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+
+	return 0;
+
 }
-
-
-
