@@ -292,27 +292,77 @@
 #include<cstdlib>
 
 
-int main()
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5 };
+//	int size = 5; 
+//	int value = 45554;
+//
+//	for (int i = size; i > 3; i--)
+//	{
+//		arr[i] = (arr[i - 1]);
+//
+//
+//	}
+//
+//	arr[2] = value;
+//	size++;
+//
+//	for (int i = 0; i < size; i++)
+//	{
+//		std::cout << arr[i] << " ";
+//	}
+//
+//	return 0;
+//
+//}
+
+#include<iostream>
+#include<stdlib.h>
+#include<stdio.h>
+
+struct Node
 {
-	int arr[10] = { 1,2,3,4,5 };
-	int size = 5; 
-	int value = 45554;
+	int data;
+	struct Node* next;
+};
 
-	for (int i = size; i > 3; i--)
+void insertatposition(struct Node** head, int pos, int value)
+{
+	struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+	newnode->data = value;
+
+	if (pos == 0)
 	{
-		arr[i] = (arr[i - 1]);
-
-
+		newnode->next = *head;
+		*head = newnode;
+		printf("Inserted %d at position %d\n", value, pos);
+		return;
+			
 	}
 
-	arr[2] = value;
-	size++;
+	struct Node* temp = *head;
 
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < pos - 1 && temp != NULL; i++)
 	{
-		std::cout << arr[i] << " ";
+		temp = temp->next;
 	}
 
-	return 0;
 
+	if (temp == NULL)
+	{
+		printf("Position %d out of bound\n", pos);
+		free(newnode);
+		return;
+	}
+
+	newnode->next = temp->next;
+	temp->next = newnode;
+	printf("Inserted %d at position %d\n", value, pos);
+}
+
+
+void printlist(struct Node* head)
+{
+	
 }
