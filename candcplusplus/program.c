@@ -476,3 +476,39 @@
 //
 //    return 0;
 //}
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<conio.h>
+
+
+
+int main()
+{
+	int a[] = { 1, 2, 3, 4 };
+	int n = 4;
+	int j = 1;
+
+	for (int i = j; i < n - 1; i++)
+		//4; 1 < 4 - 1; 1++
+		//a[1] = a[1 + 1 = 2];
+	{
+		a[i] = a[i + 1];
+
+	}
+
+	//n-- means n - 1 = 3;
+
+	n--;
+
+
+	//0; 0 < 3; loop until it hits 0
+	for (int i = 0; i < n; i++)
+	{
+		//a[0]
+		printf("%d", a[i]);
+	}
+
+	return 0;
+}

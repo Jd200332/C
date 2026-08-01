@@ -126,9 +126,6 @@
     <ClCompile Include="candcplusplus.cpp" />
     <ClCompile Include="program.c" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="program.asm" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

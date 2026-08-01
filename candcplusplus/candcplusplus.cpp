@@ -120,9 +120,9 @@
 /// <returns></returns>
 
 
-#include<stdio.h>
-#include<stdlib.h>	
-#include <iostream>
+//#include<stdio.h>
+//#include<stdlib.h>	
+//#include <iostream>
 
 //int main()
 //{
@@ -286,10 +286,33 @@
 //}
 
 
-#include <stdio.h>
-#include<iostream>
-#include<cstdio>
-#include<cstdlib>
+
+
+
+//int main()
+//{
+//	int arr[10] = { 1, 2, 3, 4, 5 };
+//	int size = 5;
+//	int value = 44;
+//
+//
+//	for (int i = size; i > 3; i--)
+//	{
+//		arr[i] = (arr[i - 1]);
+//	}
+//
+//	arr[2] = value;
+//	size++;
+//
+//
+//	for (int i = 0; i < size; i++)
+//	{
+//		std::cout << arr[i];
+//	}
+//
+//	return 0;
+//
+//}
 
 
 //int main()
@@ -317,52 +340,58 @@
 //
 //}
 
+//#include<iostream>
+//#include<stdlib.h>
+//#include<stdio.h>
+//
+//struct Node
+//{
+//	int data;
+//	struct Node* next;
+//};
+//
+//void insertatposition(struct Node** head, int pos, int value)
+//{
+//	struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+//	newnode->data = value;
+//
+//	if (pos == 0)
+//	{
+//		newnode->next = *head;
+//		*head = newnode;
+//		printf("Inserted %d at position %d\n", value, pos);
+//		return;
+//			
+//	}
+//
+//	struct Node* temp = *head;
+//
+//	for (int i = 0; i < pos - 1 && temp != NULL; i++)
+//	{
+//		temp = temp->next;
+//	}
+//
+//
+//	if (temp == NULL)
+//	{
+//		printf("Position %d out of bound\n", pos);
+//		free(newnode);
+//		return;
+//	}
+//
+//	newnode->next = temp->next;
+//	temp->next = newnode;
+//	printf("Inserted %d at position %d\n", value, pos);
+//}
+//
+//
+//void printlist(struct Node* head)
+//{
+//	
+//}
+
+#include <stdio.h>
 #include<iostream>
-#include<stdlib.h>
-#include<stdio.h>
+#include<cstdio>
+#include<cstdlib>
 
-struct Node
-{
-	int data;
-	struct Node* next;
-};
-
-void insertatposition(struct Node** head, int pos, int value)
-{
-	struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
-	newnode->data = value;
-
-	if (pos == 0)
-	{
-		newnode->next = *head;
-		*head = newnode;
-		printf("Inserted %d at position %d\n", value, pos);
-		return;
-			
-	}
-
-	struct Node* temp = *head;
-
-	for (int i = 0; i < pos - 1 && temp != NULL; i++)
-	{
-		temp = temp->next;
-	}
-
-
-	if (temp == NULL)
-	{
-		printf("Position %d out of bound\n", pos);
-		free(newnode);
-		return;
-	}
-
-	newnode->next = temp->next;
-	temp->next = newnode;
-	printf("Inserted %d at position %d\n", value, pos);
-}
-
-
-void printlist(struct Node* head)
-{
-	
-}
