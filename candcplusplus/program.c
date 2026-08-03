@@ -484,31 +484,127 @@
 
 
 
+//int main()
+//{
+//	int a[] = { 1, 2, 3, 4 };
+//	int n = 4;
+//	int j = 1;
+//
+//	for (int i = j; i < n - 1; i++)
+//		//4; 1 < 4 - 1; 1++
+//		//a[1] = a[1 + 1 = 2];
+//	{
+//		a[i] = a[i + 1];
+//
+//	}
+//
+//	//n-- means n - 1 = 3;
+//
+//	n--;
+//
+//
+//	//0; 0 < 3; loop until it hits 0
+//	for (int i = 0; i < n; i++)
+//	{
+//		//a[0]
+//		printf("%d", a[i]);
+//	}
+//
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	           // 0   1    2  3   4    5
+//	int arr[] = { 10, 20, 30, 40, 50, 60 };
+//	int n = 6;
+//	int j = 3;  // Delete index 3
+//
+//	for (int i = j; i < n - 1; i++)
+//	{
+//		arr[i] = arr[i + 1];
+//	}
+//
+//	n--; // 6 - 1 = 5
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		printf("%d\n", arr[ i ]);
+//	}
+//
+//	return 0;
+//
+//}
+
+
+//int main()
+//{
+//	int arr[] = { 10, 20, 40, 585, 68, 85, 666, 232 };
+//	int n = 8;
+//	int j = 3;	
+//
+//	for (int i = j; i < n + 1; i++)
+//	{
+//		arr[i] = arr[i + 1];
+//
+//
+//	}
+//
+//	n--;
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		printf("%d\n", arr[i]);
+//	}
+//
+//	return 0;
+//}
+
+
 int main()
 {
-	int a[] = { 1, 2, 3, 4 };
-	int n = 4;
-	int j = 1;
+	int arr[30] = { 10, 20, 30, 40, 50, 60 };
+	int n = 6;  //size
+	int j = 3;  //delete as well insert
+	int nvalue = 80;
 
-	for (int i = j; i < n - 1; i++)
-		//4; 1 < 4 - 1; 1++
-		//a[1] = a[1 + 1 = 2];
+
+	//insertion
+	for (int i = n; i > j; i--)
 	{
-		a[i] = a[i + 1];
-
+		arr[i] = arr[i - 1];
 	}
 
-	//n-- means n - 1 = 3;
+	//int i = n so n is 6 and then
+	// 6 > 3 yes its greater
+	// i-- means 6 5 4 3 stops here 
+	// 
+	// 
+	// 
+	//
+
+	n++;
+	arr[j] = nvalue;
+
+	//deletion
+	for (int i = j; i < n - 1; i++)
+	{
+		arr[i] = arr[i + 1];
+	}
+
+	//this loops runs like 3; 3 < 6 - 1
+	//so 3 4 5 6 
+	
 
 	n--;
 
-
-	//0; 0 < 3; loop until it hits 0
 	for (int i = 0; i < n; i++)
 	{
-		//a[0]
-		printf("%d", a[i]);
+		printf("%d\n", arr[i]);
 	}
 
+
 	return 0;
+
 }
