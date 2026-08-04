@@ -21,5 +21,8 @@
     <ClCompile Include="program.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Linkedlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

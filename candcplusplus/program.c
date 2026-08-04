@@ -562,49 +562,50 @@
 //}
 
 
-int main()
-{
-	int arr[30] = { 10, 20, 30, 40, 50, 60 };
-	int n = 6;  //size
-	int j = 3;  //delete as well insert
-	int nvalue = 80;
+//int main()
+//{
+//	int arr[30] = { 10, 20, 30, 40, 50, 60 };
+//	int n = 6;  //size
+//	int j = 3;  //delete as well insert
+//	int nvalue = 80;
+//
+//
+//	//insertion
+//	for (int i = n; i > j; i--)
+//	{
+//		arr[i] = arr[i - 1];
+//	}
+//
+//	//int i = n so n is 6 and then
+//	// 6 > 3 yes its greater
+//	// i-- means 6 5 4 3 stops here 
+//	// 
+//	// 
+//	// 
+//	//
+//
+//	n++;
+//	arr[j] = nvalue;
+//
+//	//deletion
+//	for (int i = j; i < n - 1; i++)
+//	{
+//		arr[i] = arr[i + 1];
+//	}
+//
+//	//this loops runs like 3; 3 < 6 - 1
+//	//so 3 4 5 6 
+//	
+//
+//	n--;
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		printf("%d\n", arr[i]);
+//	}
+//
+//
+//	return 0;
+//}
 
 
-	//insertion
-	for (int i = n; i > j; i--)
-	{
-		arr[i] = arr[i - 1];
-	}
-
-	//int i = n so n is 6 and then
-	// 6 > 3 yes its greater
-	// i-- means 6 5 4 3 stops here 
-	// 
-	// 
-	// 
-	//
-
-	n++;
-	arr[j] = nvalue;
-
-	//deletion
-	for (int i = j; i < n - 1; i++)
-	{
-		arr[i] = arr[i + 1];
-	}
-
-	//this loops runs like 3; 3 < 6 - 1
-	//so 3 4 5 6 
-	
-
-	n--;
-
-	for (int i = 0; i < n; i++)
-	{
-		printf("%d\n", arr[i]);
-	}
-
-
-	return 0;
-
-}

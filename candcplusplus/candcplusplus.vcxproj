@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="candcplusplus.cpp" />
+    <ClCompile Include="Linkedlist.c" />
     <ClCompile Include="program.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
