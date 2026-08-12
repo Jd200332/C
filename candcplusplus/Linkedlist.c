@@ -40,40 +40,157 @@
 
 
 //program to create a linked list through create function 
-typedef struct node
+//typedef struct node
+//{
+//	int data;
+//	struct node* next;
+//} node;
+//
+//node * create(int);
+//
+//int main()
+//{
+//	node *Head;
+//	int n;
+//	Head = NULL; //link list is empty
+//	printf("\n no of items");	
+//	scanf("%d", &n);
+//	Head = create(n);
+//	//create function returns the address of first node 
+//}
+//
+//node* create(int n)
+//{
+//	node *Head, *p;
+//	Head = (node*)malloc(sizeof(node));
+//	Head->next = NULL;
+//	scanf("%d", &(Head->data));
+//	p = Head;
+//	//insert the remaining nodes
+//	for (int i = 1; i < n; i++)
+//	{
+//		p->next = (node*)malloc(sizeof(node));
+//		//new node is inserted as the next node after p
+//		p = p->next;
+//		scanf("%d", &(p->data));
+//		p->next = NULL;
+//	}
+//	return Head;
+//}
+
+//struct Node
+//{
+//	int data; 
+//	struct Node* next;
+//};
+//
+//int main()
+//{
+//	struct Node* head = NULL;
+//	struct Node* second = NULL;
+//	struct Node* third = NULL;
+//
+//	head = (struct Node*)malloc(sizeof(struct Node));
+//	second = (struct Node*)malloc(sizeof(struct Node));
+//	third = (struct Node*)malloc(sizeof(struct Node));
+//
+//
+//	if (!head || !second || !third)
+//	{
+//		printf("Memory allocation failed\n");
+//		return 1;
+//	}
+//
+//	head->data = 1;
+//	head->next = second;
+//
+//	second->data = 2;
+//	second->next = third;
+//
+//	third->data = 3;
+//	third->next = NULL;
+//
+//	//print linkedlist 
+//	struct Node *temp = head;
+//	while (temp != NULL)
+//	{
+//		struct Node *next = temp->next;
+//		free(temp);
+//		temp = next;
+//	}
+//
+//	return 0;
+//
+//}
+
+
+struct Node
 {
 	int data;
-	struct node* next;
-} node;
+	struct Node* next;
+};
 
-node * create(int);
-
-int main()
+struct Node* createnode(int data)
 {
-	node *Head;
-	int n;
-	Head = NULL; //link list is empty
-	printf("\n no of items");	
-	scanf("%d", &n);
-	Head = create(n);
-	//create function returns the address of first node 
+	struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+	newnode->data = data;
+	newnode->next = NULL;
+	return newnode;
 }
 
-node* create(int n)
+void insertatfirst(struct Node** head, int data)
 {
-	node *Head, *p;
-	Head = (node*)malloc(sizeof(node));
-	Head->next = NULL;
-	scanf("%d", &(Head->data));
-	p = Head;
-	//insert the remaining nodes
-	for (int i = 1; i < n; i++)
+	struct Node* newnode = createnode(data);
+	newnode->next = *head;
+	*head = newnode;
+}
+
+void insertatend(struct Node** head, int data)
+{
+	struct Node* newnode = createnode(data);
+	if (*head == NULL)
 	{
-		p->next = (node*)malloc(sizeof(node));
-		//new node is inserted as the next node after p
-		p = p->next;
-		scanf("%d", &(p->data));
-		p->next = NULL;
+		*head = newnode;
+		return;
 	}
-	return Head;
+
+	struct Node* temp = *head;
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+
+	temp->next = newnode;
 }
+
+
+void insertatposition(struct Node** head, int data, int position)
+{
+	struct Node* newnode = createnode(data);
+
+	if (position == 0)
+	{
+		insertatfirst(head, data);
+		return;
+	}
+
+	struct Node* temp = *head;
+	for (int i = 0; temp != NULL && i < position - 1; i++)
+	{
+		temp = temp->next;
+	}
+
+	if (temp == NULL)
+	{
+		printf("Position is out of range\n");
+		free(newnode);
+		return;
+	}
+	newnode->next = temp->next;
+	temp->next = newnode;
+
+}
+
+
+
+	
