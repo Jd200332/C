@@ -1,5 +1,6 @@
 //creating a linkedlist 
 
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<conio.h>
 
@@ -124,73 +125,114 @@
 //}
 
 
-struct Node
-{
-	int data;
-	struct Node* next;
+//struct Node
+//{
+//	int data;
+//	struct Node* next;
+//};
+
+
+//struct Node* createnode(int data)
+//{
+//	struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+//	newnode->data = data;
+//	newnode->next = NULL;
+//	return newnode;
+//}
+//
+//void insertatfirst(struct Node** head, int data)
+//{
+//	struct Node* newnode = createnode(data);
+//	newnode->next = *head;
+//	*head = newnode;
+//}
+//
+//void insertatend(struct Node** head, int data)
+//{
+//	struct Node* newnode = createnode(data);
+//	if (*head == NULL)
+//	{
+//		*head = newnode;
+//		return;
+//	}
+//
+//	struct Node* temp = *head;
+//	while (temp->next != NULL)
+//	{
+//		temp = temp->next;
+//	}
+//
+//	temp->next = newnode;
+//}
+//
+//
+//void insertatposition(struct Node** head, int data, int position)
+//{
+//	struct Node* newnode = createnode(data);
+//
+//	if (position == 0)
+//	{
+//		insertatfirst(head, data);
+//		return;
+//	}
+//
+//	struct Node* temp = *head;
+//	for (int i = 0; temp != NULL && i < position - 1; i++)
+//	{
+//		temp = temp->next;
+//	}
+//
+//	if (temp == NULL)
+//	{
+//		printf("Position is out of range\n");
+//		free(newnode);
+//		return;
+//	}
+//	newnode->next = temp->next;
+//	temp->next = newnode;
+//
+//
+//}
+	
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
 };
 
-struct Node* createnode(int data)
-{
-	struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
-	newnode->data = data;
-	newnode->next = NULL;
-	return newnode;
+void insertAtBeginning(struct Node** head, int newData) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = newData;
+    newNode->next = *head;
+    *head = newNode;
 }
 
-void insertatfirst(struct Node** head, int data)
-{
-	struct Node* newnode = createnode(data);
-	newnode->next = *head;
-	*head = newnode;
+void printList(struct Node* head) {
+    while (head != NULL) {
+        printf("%d -> ", head->data);
+        head = head->next;
+    }
+    printf("NULL\n");
 }
 
-void insertatend(struct Node** head, int data)
-{
-	struct Node* newnode = createnode(data);
-	if (*head == NULL)
-	{
-		*head = newnode;
-		return;
-	}
+int main() {
+    struct Node* head = NULL;
+    int n, data, i;
 
-	struct Node* temp = *head;
-	while (temp->next != NULL)
-	{
-		temp = temp->next;
-	}
+    printf("How many numbers? ");
+    scanf("%d", &n);
 
-	temp->next = newnode;
+    for (i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%d", &data);
+        insertAtBeginning(&head, data);
+    }
+
+    printf("Linked List: ");
+    printList(head);
+
+    return 0;
 }
-
-
-void insertatposition(struct Node** head, int data, int position)
-{
-	struct Node* newnode = createnode(data);
-
-	if (position == 0)
-	{
-		insertatfirst(head, data);
-		return;
-	}
-
-	struct Node* temp = *head;
-	for (int i = 0; temp != NULL && i < position - 1; i++)
-	{
-		temp = temp->next;
-	}
-
-	if (temp == NULL)
-	{
-		printf("Position is out of range\n");
-		free(newnode);
-		return;
-	}
-	newnode->next = temp->next;
-	temp->next = newnode;
-
-}
-
-
-
-	
