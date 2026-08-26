@@ -609,3 +609,164 @@
 //}
 
 
+//#include <stdio.h>
+//
+//int linearSearch(int arr[], int n, int key) {
+//    for (int i = 0; i < n; i++) {
+//        if (arr[i] == key) {
+//            return i;  // found at index i
+//        }
+//    }
+//    return -1;  // not found
+//}
+//
+//int binarySearch(int arr[], int n, int key) {
+//    int low = 0, high = n - 1;
+//
+//    while (low <= high) {
+//        int mid = (low + high) / 2;
+//
+//        if (arr[mid] == key) {
+//            return mid;  // found at index mid
+//        }
+//        else if (arr[mid] < key) {
+//            low = mid + 1;  // search right half
+//        }
+//        else {
+//            high = mid - 1;  // search left half
+//        }
+//    }
+//    return -1;  // not found
+//}
+//
+//int main() {
+//    int arr[30] = { 10, 20, 30, 40, 50, 60 };
+//    int n = 6;
+//    int j = 3;
+//    int nvalue = 80;
+//    int key;
+//
+//    // Insertion
+//    for (int i = n; i > j; i--) {
+//        arr[i] = arr[i - 1];
+//    }
+//    n++;
+//    arr[j] = nvalue;
+//
+//    // Deletion
+//    for (int i = j; i < n - 1; i++) {
+//        arr[i] = arr[i + 1];
+//    }
+//    n--;
+//
+//    // Final array: 10, 20, 30, 50, 60
+//    printf("Array: ");
+//    for (int i = 0; i < n; i++) {
+//        printf("%d ", arr[i]);
+//    }
+//    printf("\n");
+//
+//    // Linear Search
+//    key = 50;
+//    int result = linearSearch(arr, n, key);
+//    if (result != -1)
+//        printf("Linear Search: %d found at index %d\n", key, result);
+//    else
+//        printf("Linear Search: %d not found\n", key);
+//
+//    // Binary Search (array must be sorted)
+//    key = 30;
+//    result = binarySearch(arr, n, key);
+//    if (result != -1)
+//        printf("Binary Search: %d found at index %d\n", key, result);
+//    else
+//        printf("Binary Search: %d not found\n", key);
+//
+//    return 0;
+//}
+
+
+//searching (linear and binary)
+
+//struct Array
+//{
+//	int A[10];
+//	int size;
+//	int length;
+//};
+//
+//void Display(struct Array arr) {
+//	for (int i = 0; i < arr.length; i++) {
+//		printf("%d ", arr.A[i]);
+//	}
+//	printf("\n");
+//}
+//
+//
+//int Linearsearch(struct Array arr, int key)
+//{
+//	int i;
+//	for (int i = 0; i < arr.length; i++)
+//	{
+//		if (key == arr.A[i])
+//			return i;
+//	}
+//
+//	return -1;
+//}
+//
+//int main()
+//{
+//	struct Array arr = { {2, 3, 4, 5, 6}, 10, 5 };
+//
+//	printf("%d \n ", Linearsearch(arr, 4));
+//	Display(arr);
+//	return 0;
+//}
+//
+//
+//
+//#include <stdio.h>
+//
+//int search(int arr[], int n, int x) {
+//
+//	// Iterate over the array in order to
+//	// find the key x
+//	for (int i = 0; i < n; i++)
+//		if (arr[i] == x)
+//			return i;
+//	return -1;	
+//}
+//
+//// Driver code
+//int main(void) {
+//	int arr[] = { 2, 3, 4, 10, 40 };
+//	int x = 10;
+//	int n = sizeof(arr) / sizeof(arr[0]);
+//
+//	// Function call
+//	int result = search(arr, n, x);
+//	(result == -1)
+//		? printf("Element is not present in array")
+//		: printf("Element is present at index %d", result);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[] = { 1, 2 , 4, 5 , 56, 66 };
+//	int size = 6;
+//
+//	int* p = &arr[3];
+//	int* j = &arr[4];
+//
+//	*j = 888;
+//	*p = 4444;
+//
+//	for (int i = 0; i < size; i++)
+//	{
+//		printf("%d\n", arr[i]);
+//	}
+//
+//	return 0;
+//}
