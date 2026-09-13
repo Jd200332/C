@@ -21,10 +21,13 @@
     <ClCompile Include="program.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Linkedlist.c">
+    <ClCompile Include="Linkedlist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dummy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stackqueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
