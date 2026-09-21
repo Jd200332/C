@@ -682,14 +682,60 @@ void insertail(Node** head, int data)
 	newnode->prev = fake;
 }
 
+
+void insertposition(Node** head, int data, int position)
+{
+	if (position == 1)
+	{
+		inserthead(head, data);
+		return;
+	}
+
+	Node* newnode = createnode(data);
+	Node* fake = *head;
+	for (int i = 1; fake != NULL && i < position - 1; i++)
+	{
+		fake = fake->next;
+	}
+	if (fake == NULL)
+	{
+		std::cout << "Position greater than the number \n";
+		return;
+	}
+
+	newnode->next = fake->next;
+	newnode->prev = fake;
+	if (fake->next != NULL)
+	{
+		fake->next->prev = newnode;
+	}
+	fake->next = newnode;
+}
+
 void deletehead(Node** head)
 {
 	if (*head == NULL)
 	{
-		std::cout << "The list is already empty";
+		std::cout << "Head is already empty\n";
 		return;
 	}
 
+	Node* temp = *head;
+	*head = (*head)->next;
+	if (*head != NULL)
+	{
+		(*head)->prev = NULL;
+	}
+	free(temp);
+}
+
+void deletetail(Node** head)
+{
+	if (*head == NULL)
+	{
+		std::cout << "Head is already empty\n";
+		return;
+	}
 	Node* temp = *head;
 	if (temp->next == NULL)
 	{
@@ -697,22 +743,24 @@ void deletehead(Node** head)
 		free(temp);
 		return;
 	}
+
 	while (temp->next != NULL)
 	{
 		temp = temp->next;
 	}
-	temp->prev->next = NULL;
+	temp->next->prev = NULL;
 	free(temp);
 }
+
 
 
 void printlist(Node* head)
 {
 	Node* temp = head;
-	std::cout << "Forward list";
+	std::cout << "Forward list\n";
 	while (temp != NULL)
 	{
-		std::cout << temp->data;
+		std::cout << " -> " << temp->data;
 		temp = temp->next;
 	}
 
@@ -752,7 +800,7 @@ int main()
 	
 	insertail(&head, 20 );
 	inserthead(&head, 10 );
-	//insertposition(&head, 30, 2);
+	insertposition(&head, 30, 2);
 	std::cout << "After insertion\n";
 
 	printlist(head);
