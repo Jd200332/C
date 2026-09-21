@@ -474,156 +474,294 @@
 //}\
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <cstdlib> // Needed for malloc and free
-#include <cstdio>
-#include <iostream>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <cstdlib> // Needed for malloc and free
+//#include <cstdio>
+//#include <iostream>
+//
+//
+//
+//struct Node
+//{
+//    int data;
+//    struct Node* next;
+//};
+//
+//
+//struct Node* createnode(int data)
+//{
+//    struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+//    newnode->data = data;
+//    newnode->next = NULL;
+//    return newnode;
+//}
+//
+//void inserthead(struct Node** head, int data)
+//{
+//    struct Node* newnode = createnode(data);
+//    newnode->next = *head;
+//    *head = newnode;
+//
+//}
+//
+//
+//void tail(struct Node** head, int data)
+//{
+//    struct Node* newnode = createnode(data);
+//    if (*head == NULL)
+//    {
+//        *head = newnode;
+//
+//    }
+//    struct Node* temp = *head;
+//    while (temp->next != NULL)
+//    {
+//        temp = temp->next;
+//    }
+//    temp->next = newnode;
+//
+//}
+//
+//void insertposition(struct Node** head, int data, int position)
+//{
+//    struct Node* newnode = createnode(data);
+//    if (position == 0)
+//    {
+//        inserthead(head, data);
+//        return;
+//    }
+//
+//    struct Node* temp = *head;
+//    for (int i = 0; temp != NULL && i < position - 1; i++)
+//    {
+//        temp = temp->next;
+//    }
+//
+//    if (temp == NULL)
+//    {
+//        std::cout << "Position is out of range\n";
+//        free(newnode);
+//        return;
+//    }
+//
+//    newnode->next = temp->next;
+//    temp->next = newnode;
+//
+//}
+//
+//void deletehead(struct Node** head)
+//{
+//    if (*head == NULL)
+//    {
+//        std::cout << "List is empty\n";
+//        return;
+//    }
+//
+//    struct Node* temp = *head;
+//    *head = temp->next;
+//    free(temp);
+//
+//}
+//
+//
+//void deletetail(struct Node** head)
+//{
+//    if (*head == NULL)
+//    {
+//        std::cout << "List is empty\n";
+//        return;
+//    }
+//
+//    struct Node* temp = *head;
+//    if (temp->next == NULL)
+//    {
+//        free(temp);
+//        *head = NULL;
+//        return;
+//    }
+//    while (temp->next->next != NULL)
+//    {
+//        temp = temp->next;
+//    }
+//
+//    free(temp->next);
+//    temp->next = NULL;
+//}
+//
+//void print(struct Node* head)
+//{
+//    struct Node* temp = head;
+//    while (temp != NULL)
+//    {
+//        std::cout << temp->data << " -> ";
+//        temp = temp->next;
+//    }
+//
+//    std::cout << "NULL\n";
+//}
+//
+//int main()
+//{
+//    struct Node* head = NULL;
+//
+//    inserthead(&head, 10);
+//    std::cout << "This is the head of linkedlist\n";
+//    print(head);
+//
+//
+//    std::cout << "This is the tail\n";
+//    tail(&head, 20);
+//    print(head);
+//
+//    tail(&head, 30);
+//    print(head);
+//
+//
+//    insertposition(&head, 25, 2);
+//    print(head);
+//
+//    std::cout << "Deleting the head\n";
+//    deletehead(&head);
+//    print(head);
+//
+//    return 0;
+//}
 
+#include<stdio.h>
+#include<iostream>
+#include<cstdlib>
 
-
-struct Node
+typedef struct Node
 {
-    int data;
-    struct Node* next;
-};
+	int data;
+	Node* next;
+	Node* prev;
 
+}Node;
 
-struct Node* createnode(int data)
+Node* createnode(int data)
 {
-    struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
-    newnode->data = data;
-    newnode->next = NULL;
-    return newnode;
+	Node* newnode = (Node*)malloc(sizeof(Node));
+	newnode->data = data;
+	newnode->next = NULL;
+	newnode->prev = NULL;
+	return newnode;
 }
 
-void inserthead(struct Node** head, int data)
+void inserthead(Node** head, int data)
 {
-    struct Node* newnode = createnode(data);
-    newnode->next = *head;
-    *head = newnode;
+	Node* newnode = createnode(data);
+
+	if (*head == NULL)
+	{
+		*head = newnode;
+		return;
+	}
+	newnode->next = *head;
+	(*head)->prev = newnode;
+	*head = newnode;
 
 }
 
-
-void tail(struct Node** head, int data)
+void insertail(Node** head, int data)
 {
-    struct Node* newnode = createnode(data);
-    if (*head == NULL)
-    {
-        *head = newnode;
+	Node* newnode = createnode(data);
+	if (*head == NULL)
+	{
+		*head = newnode;
+		return;	
+	}
 
-    }
-    struct Node* temp = *head;
-    while (temp->next != NULL)
-    {
-        temp = temp->next;
-    }
-    temp->next = newnode;
-
+	Node* fake = *head;
+	while (fake->next != NULL)
+	{
+		fake = fake->next;
+	}
+	fake->next = newnode;
+	newnode->prev = fake;
 }
 
-void insertposition(struct Node** head, int data, int position)
+void deletehead(Node** head)
 {
-    struct Node* newnode = createnode(data);
-    if (position == 0)
-    {
-        inserthead(head, data);
-        return;
-    }
+	if (*head == NULL)
+	{
+		std::cout << "The list is already empty";
+		return;
+	}
 
-    struct Node* temp = *head;
-    for (int i = 0; temp != NULL && i < position - 1; i++)
-    {
-        temp = temp->next;
-    }
-
-    if (temp == NULL)
-    {
-        std::cout << "Position is out of range\n";
-        free(newnode);
-        return;
-    }
-
-    newnode->next = temp->next;
-    temp->next = newnode;
-
-}
-
-void deletehead(struct Node** head)
-{
-    if (*head == NULL)
-    {
-        std::cout << "List is empty\n";
-        return;
-    }
-
-    struct Node* temp = *head;
-    *head = temp->next;
-    free(temp);
-
+	Node* temp = *head;
+	if (temp->next == NULL)
+	{
+		*head = NULL;
+		free(temp);
+		return;
+	}
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+	temp->prev->next = NULL;
+	free(temp);
 }
 
 
-void deletetail(struct Node** head)
+void printlist(Node* head)
 {
-    if (*head == NULL)
-    {
-        std::cout << "List is empty\n";
-        return;
-    }
+	Node* temp = head;
+	std::cout << "Forward list";
+	while (temp != NULL)
+	{
+		std::cout << temp->data;
+		temp = temp->next;
+	}
 
-    struct Node* temp = *head;
-    if (temp->next == NULL)
-    {
-        free(temp);
-        *head = NULL;
-        return;
-    }
-    while (temp->next->next != NULL)
-    {
-        temp = temp->next;
-    }
-
-    free(temp->next);
-    temp->next = NULL;
+	std::cout << "\n";
 }
 
-void print(struct Node* head)
+void printreverse(Node* head)
 {
-    struct Node* temp = head;
-    while (temp != NULL)
-    {
-        std::cout << temp->data << " -> ";
-        temp = temp->next;
-    }
+	Node* temp = head;
+	if (temp == NULL)
+	{
+		std::cout << "The list is empty\n";
+		return;
+	}
 
-    std::cout << "NULL\n";
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+
+	std::cout << "Reverse list\n";
+	while (temp != NULL)
+	{
+		std::cout << "->" << temp->data;
+		temp = temp->prev;
+	}
+	std::cout << "\n";
 }
+
 
 int main()
 {
-    struct Node* head = NULL;
+	Node* head = NULL;
 
-    inserthead(&head, 10);
-    std::cout << "This is the head of linkedlist\n";
-    print(head);
+	//std::cout << "This is the head of linkedlist\n";
+	
+	
+	insertail(&head, 20 );
+	inserthead(&head, 10 );
+	//insertposition(&head, 30, 2);
+	std::cout << "After insertion\n";
 
+	printlist(head);
+	printreverse(head);
 
-    std::cout << "This is the tail\n";
-    tail(&head, 20);
-    print(head);
+	std::cout << "After delete\n";
 
-    tail(&head, 30);
-    print(head);
+	return 0;
 
-
-    insertposition(&head, 25, 2);
-    print(head);
-
-    std::cout << "Deleting the head\n";
-    deletehead(&head);
-    print(head);
-
-    return 0;
 }
+
+
